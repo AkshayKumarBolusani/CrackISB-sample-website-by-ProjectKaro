@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrackISB Homepage — Mind Map & Content Plan (for approval)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#0077B6;--navy:#12355B;--orange:#FF8A00;--red:#E63946;--bg:#F8FAFC;--card:#fff;--ink:#263238;--mut:#5b6b76;--line:#e2e8f0}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px 90px}
+  .top{text-align:center;padding:56px 0 10px}
+  .pill{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 20px;border-radius:100px;margin-bottom:18px}
+  h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;color:var(--navy);margin-bottom:10px}
+  h1 .b{color:var(--blue)} h1 .r{color:var(--red)}
+  .sub{color:var(--mut);max-width:640px;margin:0 auto 8px;font-size:16px}
+  .legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:26px 0 8px;font-size:13px;color:var(--mut)}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+  /* tree */
+  .tree{position:relative;margin-top:34px}
+  .tree::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(var(--blue),var(--orange),var(--red));transform:translateX(-50%);border-radius:3px;opacity:.35}
+  .node{position:relative;width:calc(50% - 34px);background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 24px 20px;margin-bottom:22px;box-shadow:0 10px 30px -18px rgba(18,53,91,.25)}
+  .node:nth-child(odd){margin-left:auto}
+  .node:nth-child(odd)::before,.node:nth-child(even)::before{content:"";position:absolute;top:34px;width:34px;height:3px;background:var(--blue);opacity:.4}
+  .node:nth-child(odd)::before{left:-34px}
+  .node:nth-child(even)::before{right:-34px}
+  .node::after{content:"";position:absolute;top:28px;width:15px;height:15px;border-radius:50%;background:#fff;border:4px solid var(--blue)}
+  .node:nth-child(odd)::after{left:-42px}
+  .node:nth-child(even)::after{right:-42px}
+  .node.o::after{border-color:var(--orange)} .node.r::after{border-color:var(--red)} .node.n::after{border-color:var(--navy)}
+  .num{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;border-radius:10px;background:var(--navy);color:#fff;font-weight:800;font-size:15px;padding:0 10px;margin-bottom:10px}
+  .node.o .num{background:var(--orange)} .node.r .num{background:var(--red)} .node.b .num{background:var(--blue)}
+  .node h2{font-size:19px;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .node .goal{font-size:13px;color:var(--blue);font-weight:600;margin-bottom:10px}
+  .node ul{margin:0;padding-left:18px;font-size:14px;color:var(--mut)}
+  .node ul li{margin-bottom:5px}
+  .node ul li b{color:var(--ink);font-weight:600}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin:8px 6px 0 0;letter-spacing:.4px}
+  .t-m{background:#e0f2fe;color:#075985}.t-d{background:#ffedd5;color:#9a3412}.t-c{background:#fee2e2;color:#991b1b}
+  .note{background:#fff8e6;border:1.5px dashed var(--orange);border-radius:16px;padding:20px 24px;margin-top:34px;font-size:14.5px;color:var(--ink)}
+  .note b{color:var(--navy)}
+  .pal{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .sw{flex:1;min-width:120px;border-radius:12px;padding:14px;color:#fff;font-size:12px;font-weight:700}
+  .sw small{display:block;font-weight:500;opacity:.85;font-size:11px}
+  .foot{text-align:center;margin-top:44px;color:var(--mut);font-size:13px}
+  .btnrow{display:flex;gap:12px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+  .abtn{display:inline-block;padding:13px 30px;border-radius:12px;font-weight:700;text-decoration:none;font-size:15px}
+  .abtn.p{background:var(--orange);color:#fff}.abtn.s{background:var(--navy);color:#fff}
+  @media(max-width:720px){
+    .tree::before{left:14px}
+    .node{width:calc(100% - 44px);margin-left:44px !important}
+    .node::before{display:none}
+    .node::after{left:-36px !important;right:auto !important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="pill">For client approval</span>
+    <h1><span class="b">Crack</span><span class="r">ISB</span> Homepage — Mind Map</h1>
+    <p class="sub">Section order + content plan. Mobile: clean and focused. Desktop: full detail. Nothing here is invented — every fact is from crackisb.in.</p>
+    <div class="legend">
+      <span><i style="background:#0077B6"></i>Trust / structure</span>
+      <span><i style="background:#FF8A00"></i>Conversion</span>
+      <span><i style="background:#E63946"></i>Proof / urgency</span>
+      <span><i style="background:#12355B"></i>Authority</span>
+    </div>
+  </div>
+
+  <div class="tree">
+
+    <div class="node n">
+      <span class="num">01</span><h2>Menu / Header</h2>
+      <div class="goal">Goal: orient + convert in 3 seconds</div>
+      <ul>
+        <li><b>Logo</b> (brand colors) + sticky on scroll</li>
+        <li>Links: Programs · Why CrackISB · Results · Blogs · FAQ · Contact</li>
+        <li><b>CTA button:</b> "Book Free Counselling" (orange)</li>
+        <li>Click-to-call phone in header (mobile: tap-to-call)</li>
+      </ul>
+      <span class="tag t-m">Mobile: logo + call + menu</span><span class="tag t-d">Desktop: full nav</span>
+    </div>
+
+    <div class="node o">
+      <span class="num">02</span><h2>Hero Slider — 2 slides</h2>
+      <div class="goal">Goal: emotion first, action second</div>
+      <ul>
+        <li><b>Slide 1 — Student Success:</b> admit story headline + photo + "Read their stories"</li>
+        <li><b>Slide 2 — Admissions Open:</b> next-cycle deadlines + "Book Free Counselling"</li>
+        <li>Trust chips under hero: <b>Since 2009 · ISB alumni mentors · 1:1 mentoring</b></li>
+      </ul>
+      <span class="tag t-m">Mobile: 1 headline + 1 CTA per slide</span><span class="tag t-d">Desktop: side visual + floating stat cards</span>
+    </div>
+
+    <div class="node b">
+      <span class="num">03</span><h2>About CrackISB</h2>
+      <div class="goal">Goal: who are these people</div>
+      <ul>
+        <li><b>Founded 2009 by ISB alumni</b> — premium mentoring for top global B-schools</li>
+        <li>Short story: 15+ years, Hyderabad classroom + live online across India</li>
+        <li>Photo: founders / classroom (real images)</li>
+      </ul>
+    </div>
+
+    <div class="node r">
+      <span class="num">04</span><h2>Counters / Key Numbers</h2>
+      <div class="goal">Goal: credibility at a glance</div>
+      <ul>
+        <li><b>60+</b> topic-based online tests in student portal</li>
+        <li><b>10+</b> full-length adaptive GMAT mock tests</li>
+        <li><b>2009</b> founded by ISB alumni</li>
+        <li><b>70+</b> hours of GMAT mentoring</li>
+      </ul>
+      <span class="tag t-m">Mobile: 2×2 grid</span><span class="tag t-d">Desktop: 4 in a row</span>
+    </div>
+
+    <div class="node b">
+      <span class="num">05</span><h2>Courses Offered</h2>
+      <div class="goal">Goal: "they have exactly what I need"</div>
+      <ul>
+        <li><b>GMAT Focus Edition</b> — 2026 pattern, drills, mock strategy</li>
+        <li><b>GRE</b> — shorter-GRE pattern, vocab systems</li>
+        <li><b>Digital SAT</b> — for undergrad aspirants</li>
+        <li><b>MBA Admissions</b> — essays, interviews, school selection</li>
+        <li>Each card: what's inside + "Get details" → contact</li>
+      </ul>
+    </div>
+
+    <div class="node n">
+      <span class="num">06</span><h2>Why Choose CrackISB</h2>
+      <div class="goal">Goal: why not the cheaper institute</div>
+      <ul>
+        <li><b>ISB alumni mentors</b> — not generic faculty</li>
+        <li><b>Classroom + live online</b> — online students can attend classroom too (12-month validity)</li>
+        <li><b>End-to-end:</b> test prep + essays + interviews, one team</li>
+      </ul>
+    </div>
+
+    <div class="node r">
+      <span class="num">07</span><h2>Results / Student Success</h2>
+      <div class="goal">Goal: proof, the strongest converter</div>
+      <ul>
+        <li><b>Real reviews:</b> Sarthak Gupta (ISB YLP, 99th %ile) · Renuka Gunasekar (740, ISB PGP) · Venkat Sravan Paladi (ISB PGP, 50% scholarship)</li>
+        <li>Card style: photo/initial, stars, quote, name + admit</li>
+        <li>More images here — success story photos</li>
+      </ul>
+      <span class="tag t-c">Only verified reviews — never invented</span>
+    </div>
+
+    <div class="node b">
+      <span class="num">08</span><h2>Gallery</h2>
+      <div class="goal">Goal: "this place is real"</div>
+      <ul>
+        <li>Classroom, mentoring sessions, events, campus life</li>
+        <li>Real photos from CrackISB (client to provide)</li>
+      </ul>
+      <span class="tag t-m">Mobile: swipe strip</span><span class="tag t-d">Desktop: mosaic grid</span>
+    </div>
+
+    <div class="node b">
+      <span class="num">09</span><h2>Blogs</h2>
+      <div class="goal">Goal: SEO + authority</div>
+      <ul>
+        <li>Pull 3–4 latest from their real articles</li>
+        <li>Each: image, title, 1-line summary, "Read more"</li>
+      </ul>
+    </div>
+
+    <div class="node n">
+      <span class="num">10</span><h2>FAQs — "What candidates ask first"</h2>
+      <div class="goal">Goal: kill objections before the call</div>
+      <ul>
+        <li>Weekday vs weekend batches? · Online or classroom? · Only test prep or admissions too?</li>
+        <li>Who mentors me? · When to start? · Fees?</li>
+        <li>Centered accordion, honest answers (fees → "depends, free counselling first")</li>
+      </ul>
+    </div>
+
+    <div class="node o">
+      <span class="num">11</span><h2>CTA Box</h2>
+      <div class="goal">Goal: the ask</div>
+      <ul>
+        <li><b>"Your B-school is waiting."</b> + Book Free Counselling button</li>
+        <li>Reassurance line: "Talk to a mentor before you spend a rupee."</li>
+      </ul>
+    </div>
+
+    <div class="node o">
+      <span class="num">12</span><h2>Contact Form + Google Maps</h2>
+      <div class="goal">Goal: capture the lead</div>
+      <ul>
+        <li><b>Form:</b> name, phone, email, goal (GMAT/GRE/SAT/Admissions) → opens WhatsApp with prefilled message</li>
+        <li><b>Map:</b> embedded Google Map — Anuusha Castle, Kukatpally, Hyderabad</li>
+        <li>Phone: +91-9951788787 · 040-4012 2061 · info@crackisb.in</li>
+      </ul>
+      <span class="tag t-m">Mobile: form first, map below</span><span class="tag t-d">Desktop: side by side</span>
+    </div>
+
+    <div class="node n">
+      <span class="num">13</span><h2>Footer</h2>
+      <div class="goal">Goal: completeness + trust</div>
+      <ul>
+        <li>Programs · Quick links · Contact · Social icons</li>
+        <li>Disclaimer: "CrackISB is not officially connected with ISB."</li>
+        <li>© 2026 CrackISB</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <b>Brand system for the homepage (from logo):</b>
+    <div class="pal">
+      <div class="sw" style="background:#0077B6">Blue #0077B6<small>Primary · headings · buttons</small></div>
+      <div class="sw" style="background:#12355B">Navy #12355B<small>Text · nav · premium sections</small></div>
+      <div class="sw" style="background:#FF8A00">Orange #FF8A00<small>CTAs · highlights</small></div>
+      <div class="sw" style="background:#E63946">Red #E63946<small>Key accents</small></div>
+      <div class="sw" style="background:#F1F5F9;color:#263238">Gray #F1F5F9<small>Cards · sections</small></div>
+      <div class="sw" style="background:#263238">Charcoal #263238<small>Body text</small></div>
+    </div>
+    <p style="margin-top:14px"><b>70 / 20 / 10 rule:</b> 70% white &amp; light backgrounds · 20% blue + navy · 10% orange/red accents. Premium and trustworthy, with the logo's energy.</p>
+    <p style="margin-top:8px"><b>Images:</b> banners, course cards, success stories and gallery use real CrackISB photos (client to provide). Placeholders in the sample are clearly marked for swap.</p>
+  </div>
+
+  <div class="btnrow">
+    <span class="abtn p">Approve section order + content →</span>
+    <span class="abtn s">Then we build the sample homepage</span>
+  </div>
+
+  <div class="foot">Prepared by ProjectKaro · for CrackISB approval · October 2026</div>
+</div>
+</body>
+</html>
